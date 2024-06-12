@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import fitz
+import pymupdf as pymupdf
 
-st.title('Octostar Cat')
+st.title('Hi! Welcome to the PDF Cat Reader.')
 
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf", accept_multiple_files=False)
 
@@ -11,4 +11,4 @@ uploaded_file = st.file_uploader("Choose a PDF file", type="pdf", accept_multipl
 
 if uploaded_file is not None:
     #process_pdf(uploaded_file)
-    doc = fitz.open(uploaded_file)
+    doc = pymupdf.open(uploaded_file)
