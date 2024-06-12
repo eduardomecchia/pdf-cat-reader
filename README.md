@@ -16,3 +16,17 @@ If you don't have Streamlit installed, you can install it by running the followi
 ```bash
 pip install streamlit
 ```
+
+# Explanation
+I first went through the Streamlit documentation to understand how to use the library and create a simple app.
+
+First, I've created 3 documents to test the app:
+- A PDF file with text only;
+- A PDF file with text and an image of a cat;
+- A PDF file with many, many words, to test if the app works on documents with multiple pages;
+
+Then I've searched the internet for a list of English stop words, which I found [here](https://gist.github.com/sebleier/554280). 
+
+I have subsequently used the PyMuPDF library to extract the text (and eventual image) from the PDF file.
+
+Finally, I've deployed the app on Streamlit Sharing, which you can access by clicking [here](https://share.streamlit.io/).
