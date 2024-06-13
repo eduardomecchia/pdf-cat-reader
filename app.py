@@ -1,12 +1,15 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 import pymupdf as pymupdf
 from PIL import Image
 import io
 import torch
 import torchvision.transforms as transforms
 from torchvision import models
+
+st.set_page_config(
+    page_title="PDF Cat Reader",
+    page_icon="😽",
+)
 
 st.title('Hi! Welcome to the PDF Cat Reader.')
 
@@ -182,7 +185,7 @@ if uploaded_file is not None:
         images += page.get_images()
 
     st.write(f"Total words in the PDF (excluding stop words): {words_count}")
-    
+
     if len(images) > 0:
         for idx, img in enumerate(images):
             xref = img[0]
