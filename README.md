@@ -36,6 +36,7 @@ I have subsequently used the PyMuPDF library to extract the text (and eventual i
 As you can see from the commit history, I've decided to develop the app step-by-step: first I made sure the normal word count was fine, then I added the stop words filter, and finally I added the image detection.
 Of course I also needed to convert the text to lowercase to make sure the stop words filter worked properly.
 For the image detection, the requirements said that there could be only one image, but I've decided to make it more flexible and detect multiple images in the PDF.
+I have implemented it using the PyTorch and Pillow libraries, after reading a bit about my options on various StackOverflow threads.
 
 As a final touch, I've tried customizing the app a bit, changing the theme, title and favicon.
 Finally, I've deployed the app on Streamlit Sharing, which you can access by clicking [here](https://pdf-cat-reader.streamlit.app/).
