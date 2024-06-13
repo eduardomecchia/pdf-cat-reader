@@ -25,6 +25,8 @@ First, I've created 3 documents to test the app:
 - A PDF file with just a cat;
 - A PDF file with text and an image of a cat;
 - A PDF file with many, many words, to test if the app works on documents with multiple pages;
+- A PDF file with an image that is not a cat.
+- A PDF file with an image of a cat AND an image of a dog.
 
 Then I've searched the internet for a list of English stop words, which I found [here](https://gist.github.com/sebleier/554280).
 This is from the NLTK library, which, as I learned, is a popular library for natural language processing. It could've helped me but I've decided to keep it simple.
@@ -33,8 +35,9 @@ I have subsequently used the PyMuPDF library to extract the text (and eventual i
 
 As you can see from the commit history, I've decided to develop the app step-by-step: first I made sure the normal word count was fine, then I added the stop words filter, and finally I added the image detection.
 Of course I also needed to convert the text to lowercase to make sure the stop words filter worked properly.
-For the image detection, the requirements said that there could be only one cat, but I've decided to make it more flexible and detect multiple cat images in the PDF.
+For the image detection, the requirements said that there could be only one image, but I've decided to make it more flexible and detect multiple images in the PDF.
 
+As a final touch, I've tried customizing the app a bit, changing the theme, title and favicon.
 Finally, I've deployed the app on Streamlit Sharing, which you can access by clicking [here](https://pdf-cat-reader.streamlit.app/).
 
 Thanks a lot for the opportunity, I hope you like the app! 😊
