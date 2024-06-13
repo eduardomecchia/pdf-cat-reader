@@ -186,14 +186,16 @@ if uploaded_file is not None:
 
     st.write(f"Total words in the PDF (excluding stop words): {words_count}")
 
-    if len(images) > 0:
+    cat_class_indices = range(281, 286)  
+
+    if images:
         for idx, img in enumerate(images):
             xref = img[0]
             base_image = doc.extract_image(xref)
             image_bytes = base_image["image"]
 
             prediction = get_prediction(image_bytes, model)
-            label = 'a cat' if prediction == 281 or prediction == 282 or prediction == 283 or prediction == 284 or prediction == 285 else 'something that\'s not a cat'  # The numbers are the class indexes for various cat races in ImageNet
+            label = 'a cat' if prediction in cat_class_indices else 'something that\'s not a cat'  # The numbers are the class indexes for various cat races in ImageNet
 
             st.write(f"Image {idx + 1} contains {label}.")
             
